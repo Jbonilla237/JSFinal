@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Versus Gamer Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('img67.jpg'); /* Set background image */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh; /* Ensure the body fills the viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center; /* Center the header */
+            padding: 20px 0;
+        }
+
+        .header img {
+            width: 200px; /* Adjust image width as needed */
+        }
+
+        .header-links {
+            margin-top: 20px; /* Add space between logo and links */
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header a:hover {
+            background-color: rgba(157, 0, 255, 0.5); /* Neon purple color on hover */
+        }
+
+        .header a:active {
+            background-color: rgba(157, 0, 255, 0.8); /* Neon purple color when clicked */
+        }
+
+        .checkout-container {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            font-family: 'Roboto Mono', monospace; /* Roboto Mono font */
+        }
+
+        .checkout-content {
+            text-align: center; /* Center text */
+            color: #ffffff; /* White text color */
+            font-size: 18px; /* Adjust font size */
+            line-height: 1.6; /* Adjust line height for readability */
+        }
+
+        .checkout-item {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .checkout-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .checkout-item p {
+            margin-bottom: 5px;
+        }
+
+        .checkout-total {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .checkout-buttons {
+            margin-top: 20px;
+        }
+
+        .checkout-buttons button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .checkout-buttons button:hover {
+            background-color: rgba(255, 0, 0, 0.8);
+        }
+
+        .checkout-buttons a {
+            color: #9d00ff;
+            text-decoration: none;
+            border: 1px solid #9d00ff;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .checkout-buttons a:hover {
+            color: #fff;
+            background-color: #9d00ff;
+            border-color: #9d00ff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff; /* LED white shadow */
+            font-size: 20px; /* Increase font size */
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-family: 'Roboto Mono', monospace; /* Robotic Mono font */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+            display: inline-block; /* Display as block to enable margin settings */
+            text-align: left; /* Align text to the left */
+        }
+
+        .footer a:hover {
+            color: #9d00ff; /* Neon purple color on hover */
+        }
+
+        .footer img {
+            width: 30px; /* Adjust image size */
+            border-radius: 50%; /* Make images round */
+        }
+
+        /* Additional styles for pickup and card input */
+        .pickup-option {
+            margin-top: 20px;
+        }
+
+        .pickup-option label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .pickup-option select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            color: #000;
+            font-size: 16px;
+        }
+
+        .card-info {
+            margin-top: 20px;
+        }
+
+        .card-info label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .card-info input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            color: #000;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <img src="logovs.jpg" alt="Versus Logo">
+    <div class="header-links">
+        <a href="CIS 301finalproject.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="menu.html">Menu</a>
+        <a href="Reservation.html">Reservations</a>
+    </div>
+</header>
+<div class="checkout-container">
+    <div class="checkout-content">
+        <h2>Checkout</h2>
+        <!-- Checkout items will be dynamically added here -->
+        <div id="checkout-items"></div>
+        <div class="checkout-total" id="total">
+            <h3>Total: $0.00</h3>
+        </div>
+        <div class="pickup-option">
+            <label for="pickup">Pickup or Eat In:</label>
+            <select id="pickup">
+                <option value="pickup">Pickup</option>
+                <option value="eat-in">Eat In</option>
+            </select>
+        </div>
+        <div class="card-info">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="Enter your card number">
+        </div>
+        <div class="checkout-buttons">
+            <button onclick="confirmOrder()">Confirm Order</button>
+            <a href="menu.html">Add more items</a>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <a href="https://www.instagram.com/os_newyorkcity/"><img src="ig.jpg" alt="Instagram"></a>
+    <a href="https://twitter.com/OS_NewYorkCity/"><img src="x4.jpg" alt="Twitter"></a>
+    <a href="https://www.twitch.tv/os_operatingsystem"><img src="twitch.jpg" alt="Twitch"></a>
+    <a href="https://www.facebook.com/osnewyorkcity/"> <img src="fb.jpg" alt="Facebook"></a>
+    <a href="https://discord.com/invite/FWKV2UFjGm"> <img src="disc.jpg" alt="Discord"></a>
+    <a href="https://www.youtube.com/channel/UCtn6s4C1lueMRa8ELOEMR3g"><img src="yt.jpg" alt="Youtube"></a>
+    <p>&copy; 2024 Versus</p>
+    <p>Phone Number: (212)-600-4325</p>
+    <p>Hours Of Operation: Mon-Thurs 12pm-11pm, Fri-Sun 12pm-1am</p>
+</footer>
+<script>
+    var total = 0;
+
+    // Function to confirm the order
+    function confirmOrder() {
+        var pickupOption = document.getElementById('pickup').value;
+        var cardNumber = document.getElementById('card-number').value;
+
+        // If pickup option is selected, check if card number is entered
+        if (pickupOption === 'pickup' && cardNumber.trim() === '') {
+            alert('Please enter your card number for pickup.');
+            return;
+        }
+
+        // You can add your order confirmation logic here
+        // For demonstration purposes, let's just alert the confirmation message
+        alert('Order confirmed! Thank you for your purchase.');
+        // Redirect to home page after confirmation
+        window.location.href = 'CIS 301finalproject.html';
+    }
+
+    // Function to remove an item from the checkout
+    function removeItem(item, price) {
+        var itemElement = document.getElementById(item);
+        itemElement.parentNode.removeChild(itemElement);
+
+        // Subtract the price of the removed item from the total
+        total -= price;
+        updateTotal();
+    }
+
+    // Function to add an item to the checkout
+    function addItem(name, price) {
+        var checkoutItems = document.getElementById('checkout-items');
+
+        // Create the checkout item element
+        var item = document.createElement('div');
+        item.className = 'checkout-item';
+        item.id = name;
+
+        // Add item name and price
+        item.innerHTML = '<h3>' + name + '</h3><p>$' + price.toFixed(2) + '</p>';
+
+        // Add remove button
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = function() {
+            removeItem(name, price);
+        };
+        item.appendChild(removeButton);
+
+        // Add the item to the checkout
+        checkoutItems.appendChild(item);
+
+        // Add the price to the total
+        total += price;
+        updateTotal();
+    }
+
+    // Function to update the total
+    function updateTotal() {
+        document.getElementById('total').innerHTML = '<h3>Total: $' + total.toFixed(2) + '</h3>';
+    }
+
+    // Function to toggle card info visibility based on pickup option
+    document.getElementById('pickup').addEventListener('change', function() {
+        var cardInfo = document.getElementsByClassName('card-info')[0];
+        if (this.value === 'pickup') {
+            cardInfo.style.display = 'block';
+        } else {
+            cardInfo.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>
