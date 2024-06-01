@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Versus Gamer Restaurant</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto Mono', monospace;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 2s ease;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .header img.logo {
+            width: 200px; /* Adjust the width as needed */
+            border-radius: 50%; /* Make the logo oval-shaped */
+            border: 4px solid white; /* Add a white border */
+        }
+        .header-links {
+            margin-top: 10px;
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+        .header a:hover {
+            background-color: rgba(157, 0, 255, 0.5);
+        }
+        .header a:active {
+            background-color: rgba(157, 0, 255, 0.8);
+        }
+        .content {
+            text-align: center;
+            margin: 50px auto;
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 1.6;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+            border: 3px solid rgba(128, 128, 128, 0.8);
+            padding: 20px;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: relative;
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+            font-size: 16px;
+            margin-top: auto;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-family: 'Roboto Mono', monospace;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+        footer a:hover {
+            color: #9d00ff;
+        }
+        footer img {
+            width: 30px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logovs.jpg" alt="Versus Logo" class="logo">
+        <div class="header-links">
+            <a href="home.html">Home</a>
+            <a href="AU.html">About Us</a>
+            <a href="food.html">Menu</a>
+            <a href="Table.html">Reservations</a>
+            
+        </div>
+    </header>
+    <div class="content">
+        <h2>Our Story</h2>
+        <p>In the heart of a vibrant city, three friends found themselves engrossed in an epic gaming session one fateful night. As the hours passed and hunger struck, they paused, sharing a moment of revelation amidst the glow of the screens and the laughter of camaraderie.</p>
+        <p>"You know what would be awesome?" one of them exclaimed. "A place where we could game, eat, and chill – all under one roof."</p>
+        <p>And just like that, the seed of an idea was planted. Fueled by their passion for gaming and a shared love of good food, they set out to make their dream a reality.</p>
+        <p>With determination and a whole lot of elbow grease, they transformed their vision into Versus – a haven where gamers could gather, refuel with delicious snacks and drinks, and dive back into their virtual adventures.</p>
+        <div>
+            <p>From that night forward, Versus became more than just a place to play games. It became a sanctuary for gamers of all stripes, a place where friendships were forged, memories were made, and the spirit of gaming thrived. And as the doors of Versus swung open to welcome one and all, the legacy of three friends and their shared dream lived on, lighting the way for a new era of gaming greatness!</p>
+        </div>
+    </div>
+    <footer>
+        <a href="https://www.instagram.com/os_newyorkcity/"><img src="ig.jpg" alt="Instagram"></a>
+        <a href="https://twitter.com/OS_NewYorkCity/"><img src="x4.jpg" alt="Twitter"></a>
+        <a href="https://www.twitch.tv/os_operatingsystem"><img src="twitch.jpg" alt="Twitch"></a>
+        <a href="https://www.facebook.com/osnewyorkcity/"> <img src="fb.jpg" alt="Facebook"></a>
+        <a href="https://discord.com/invite/FWKV2UFjGm"> <img src="disc.jpg" alt="Discord"></a>
+        <a href="https://www.youtube.com/channel/UCtn6s4C1lueMRa8ELOEMR3g"><img src="yt.jpg" alt="Youtube"></a>
+        <p>&copy; 2024 Versus</p>
+        <p>Phone Number: (212)-600-4325</p>
+        <p>Hours Of Operation: Mon-Thurs 12pm-11pm, Fri-Sun 12pm-1am</p>
+    </footer>
+
+    <script>
+        // List of background images
+        const images = [
+            'image45.jpg',
+            'photo67.jpg',
+            'inside09.jpg',
+            '99.jpg',
+            '890.jpg'
+        ];
+
+        // Function to change background image
+        function changeBackground() {
+            const index = Math.floor(Math.random() * images.length);
+            const imageUrl = `url('${images[index]}')`;
+            document.body.style.backgroundImage = imageUrl;
+        }
+
+        // Initial background image change
+        changeBackground();
+
+        // Change background image every 3 seconds
+        setInterval(changeBackground, 3000);
+    </script>
+</body>
+</html>
