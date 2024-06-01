@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Versus Gamer Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Your existing CSS styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Set background color to dark gray */
+            font-family: Arial, sans-serif;
+            color: white;
+            height: 100%; /* Make sure body stretches to full height */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+        }
+        .header {
+            text-align: center; /* Center the header */
+            padding: 20px 0; /* Increased padding */
+            background-color: black; /* Set background color to black */
+            border-bottom: 3px solid #9d00ff; /* Neon purple border */
+        }
+        .header img {
+            width: 150px; /* Adjust image width */
+            margin-bottom: 10px; /* Add margin below the logo */
+        }
+        .header-links {
+            margin-top: 10px; /* Add space between logo and links */
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px; /* Adjusted padding */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 18px; /* Adjusted font size */
+            margin: 0 5px; /* Adjusted margin */
+        }
+        .header a:hover {
+            background-color: rgba(157, 0, 255, 0.5); /* Neon purple color on hover */
+        }
+        .header a:active {
+            background-color: rgba(157, 0, 255, 0.8); /* Neon purple color when clicked */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto; /* Center the table */
+            max-width: 800px; /* Set max-width */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            border: 3px solid rgba(128, 128, 128, 0.8); /* Gray border */
+            color: #9d00ff; /* Neon purple text color */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Rounded corners */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            font-size: 20px; /* Increase font size */
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-family: 'Roboto Mono', monospace; /* Robotic Mono font */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+            display: inline-block; /* Display as block to enable margin settings */
+            text-align: left; /* Align text to the left */
+        }
+        footer a:hover {
+            color: #9d00ff; /* Neon purple color on hover */
+        }
+        footer img {
+            width: 30px; /* Adjust image size */
+            border-radius: 50%; /* Make images round */
+        }
+        .reservation-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .reservation-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .reservation-form input[type="text"],
+        .reservation-form input[type="number"],
+        .reservation-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        .reservation-form input[type="submit"] {
+            background-color: #9d00ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .reservation-form input[type="submit"]:hover {
+            background-color: rgba(157, 0, 255, 0.8);
+        }
+        .rules-table {
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(128, 128, 128, 0.8);
+            border-radius: 10px;
+            color: #9d00ff; /* Neon purple text color */
+            padding: 20px;
+        }
+        .rules-table th, .rules-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .rules-table th {
+            background-color: #f2f2f2;
+        }
+        .rules-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logovs.jpg" alt="Versus Logo">
+        <div class="header-links">
+            <a href="CIS301finalproject.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="menu.html"> Menu</a>
+            <a href="Reservation.html"> Reservations</a>
+			<a href="checkout.html"> Checkout</a>
+        </div>
+    </header>
+
+    <h2 style="text-align: center;">Reservations</h2>
+
+    <div class="reservation-form">
+        <form action="#" method="POST">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+
+            <label for="card">Credit/Debit Card:</label>
+            <input type="text" id="card" name="card" required>
+
+            <label for="deposit">Deposit Fee:</label>
+            <input type="text" id="deposit" name="deposit" value="$50" readonly>
+
+            <input type="submit" value="Submit Reservation">
+        </form>
+    </div>
+
+    <h2 style="text-align: center;">Rules and Regulations</h2>
+
+    <table class="rules-table">
+        <thead>
+            <tr>
+                <th>No Discrimination</th>
+                <th>No discrimination is tolerated in Versus! This is a safe space for everyone.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>No Refunds</td>
+                <td>No refunds will be issued for cancellations.</td>
+            </tr>
+            <tr>
+                <td>Arrival Time</td>
+                <td>Guests must arrive at least 15 minutes early before the reservation time.</td>
+            </tr>
+            <tr>
+                <td>No Outside PCs</td>
+                <td>Bringing your own PCs or gaming equipment is not allowed.</td>
+            </tr>
+            <tr>
+                <td>No Inappropriate Attire</td>
+                <td>Guests must adhere to the dress code and avoid inappropriate attire.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <a href="https://www.instagram.com/os_newyorkcity/"><img src="ig.jpg" alt="Instagram"></a>
+        <a href="https://twitter.com/OS_NewYorkCity/"><img src="x4.jpg" alt="Twitter"></a>
+        <a href="https://www.twitch.tv/os_operatingsystem"><img src="twitch.jpg" alt="Twitch"></a>
+        <a href="https://www.facebook.com/osnewyorkcity/"> <img src="fb.jpg" alt="Facebook"></a>
+        <a href="https://discord.com/invite/FWKV2UFjGm"> <img src="disc.jpg" alt="Discord"></a>
+        <a href="https://www.youtube.com/channel/UCtn6s4C1lueMRa8ELOEMR3g"><img src="yt.jpg" alt="Youtube"></a>
+        <p>&copy; 2024 Versus</p>
+        <p>Phone Number: (212)-600-4325</p>
+        <p>Hours Of Operation: Mon-Thurs 12pm-11pm, Fri-Sun 12pm-1am</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add event listener to the reservation form
+            const form = document.querySelector('.reservation-form form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting
+
+                // Get form inputs
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                const guests = document.getElementById('guests').value;
+                const card = document.getElementById('card').value;
+
+                // Validate form inputs
+                if (date.trim() === '' || time.trim() === '' || guests.trim() === '' || card.trim() === '') {
+                    alert('Please fill out all fields.'); // Show an alert if any field is empty
+                } else {
+                    // Reservation successful message
+                    alert(`Thank you for your reservation!\n\nDate: ${date}\nTime: ${time}\nGuests: ${guests}\nCard: ${card}`);
+
+                    // Reset form fields
+                    form.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
